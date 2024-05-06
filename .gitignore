@@ -1,5 +1,6 @@
 .fvm/flutter_sdk
 .fvm
+.shorebird.yami
 
 # Miscellaneous
 *.class

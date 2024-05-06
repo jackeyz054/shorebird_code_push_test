@@ -45,6 +45,7 @@ class _HomeRoutePageState extends State<HomeRoutePage> {
   @override
   void initState() {
     super.initState();
+    //用來呈現畫面上現在的patch數量為何
     shorebirdCodePush.currentPatchNumber().then(
       (value) {
         devLog("版本號測試", value.toString());
@@ -52,6 +53,7 @@ class _HomeRoutePageState extends State<HomeRoutePage> {
     );
   }
 
+  //檢查是否需要更新
   void _checkForUpdates() async {
     final isUpdateAvailable =
         await shorebirdCodePush.isNewPatchAvailableForDownload();

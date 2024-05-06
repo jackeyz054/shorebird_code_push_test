@@ -50,7 +50,7 @@ class _shorebirdPageState extends ConsumerState<shorebirdPage> {
 
     if (shorebirdProvider.bannerState) {
       setState(() {
-        shorebirdController!.showScaffoldMessageBanner(context);
+        shorebirdController!.showScaffoldMessageBanner(context, ref);
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -80,7 +80,7 @@ class _shorebirdPageState extends ConsumerState<shorebirdPage> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors
-            .white, //theme.splashColor, //theme.colorScheme.inversePrimary,
+            .orange, //theme.splashColor, //theme.colorScheme.inversePrimary,
         title: const Text('Shorebird Code Push Page'),
       ),
       body: Center(
@@ -107,13 +107,6 @@ class _shorebirdPageState extends ConsumerState<shorebirdPage> {
                     ? const _LoadingIndicator()
                     : const Text('Check for update'),
               ),
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    backgroundColor = Colors.orange;
-                  });
-                },
-                child: const Text('改變背景顏色')),
           ],
         ),
       ),
